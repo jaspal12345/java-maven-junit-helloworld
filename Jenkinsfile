@@ -9,13 +9,13 @@ pipeline {
         }
          stage('Unit Test') {
             steps {
-                mvn clean test
+               sh 'mvn clean test'
                 
             }
         }
         stage('Verify') {
             steps {
-                mvn clean verify 
+                sh 'mvn clean verify'
             }
         }
     }
