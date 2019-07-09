@@ -26,14 +26,11 @@ pipeline {
                 git branch: "master",
                 credentialsId: 'Git_Creds',
                 url: 'https://github.com/jaspal12345/Cucumber-TestNG.git'
+                sh 'mvn clean test'
             }
-            sh 'ls'
+            
         }
     }
     }
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-    }
+    
 }
