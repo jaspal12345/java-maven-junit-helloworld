@@ -1,9 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('Clone') {
             steps {
                 checkout scm
+                
+            }
+        }
+         stage('Unit Test') {
+            steps {
+                mvn clean test
+                
+            }
+        }
+        stage('Verify') {
+            steps {
+                mvn clean verify 
             }
         }
     }
