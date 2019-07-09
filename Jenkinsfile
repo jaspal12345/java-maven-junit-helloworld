@@ -18,10 +18,10 @@ pipeline {
                 sh 'mvn clean verify'
             }
         }
-          stage('CheckoutModule2') {
+          stage('Checkout UI Tests') {
         steps {
-            sh 'mkdir -p UI Tests'
-            dir("Module2")
+            sh 'mkdir -p UI_Tests'
+            dir("UI_Tests")
             {
                 git branch: "master",
                 credentialsId: 'Git_Creds',
