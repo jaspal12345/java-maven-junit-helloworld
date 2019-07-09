@@ -7,18 +7,12 @@ pipeline {
                 
             }
         }
-         stage('Unit Test') {
+         stage('installing the jar') {
             steps {
-               sh 'mvn clean test'
-                
+               sh 'mvn clean install'
             }
         }
-        stage('Verify') {
-            steps {
-                sh 'mvn clean verify'
-            }
-        }
-          stage('Checkout UI Tests') {
+    stage('Running UI Tests') {
         steps {
             sh 'mkdir -p UI_Tests'
             dir("UI_Tests")
